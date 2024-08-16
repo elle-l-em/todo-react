@@ -294,3 +294,8 @@ body {
   opacity: 1;
 }
 /* End checkbox styles */
+
+.btn__primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
