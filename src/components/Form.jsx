@@ -8,8 +8,10 @@ function Form(props) {
   // working through MDN's React tutorial.
   function handleSubmit(event) {
     event.preventDefault();
-    props.addTask(name);
-    setName("");
+    if (name.trim() !== "") {
+      props.addTask(name);
+      setName("");
+    }
   }
 
   function handleChange(event) {
@@ -33,7 +35,7 @@ function Form(props) {
         value={name}
         onChange={handleChange}
       />
-      <button type="submit" className="btn btn__primary btn__lg">
+      <button type="submit" className="btn btn__primary btn__lg" disabled={name.trim() === ""}>
         Add
       </button>
     </form>
